@@ -55,23 +55,22 @@
           :key="index"
           class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col"
         >
-          <div
-            class=" border-1 border-solid rounded-lg shadow-md py-1 px-1"
-          >
-            <img class="hover:grow hover:shadow-lg" :src="item.img" />
+          <div class="border-1 border-solid rounded-lg shadow-md py-1 px-1">
+            <a href="#"
+              ><img class="hover:grow hover:shadow-lg" :src="item.img"
+            /></a>
             <div class="pt-3 flex flex-col text-center uppercase">
               <p class="text-xs font-normal">Product Name</p>
               <p class="pt-1 text-gray-500 text-sm font-medium">
                 Product details
               </p>
               <p class="pt-1 pb-2 text-gray-800 font-black">$9.99</p>
-            </div>
-            <div class="text-center">
-              <button
+              <a
+                href="#"
                 class="py-1 px-2 text-xs font-bold text-gray-100 bg-gray-900 rounded-xl hover:grow"
               >
                 Ver más
-              </button>
+              </a>
             </div>
           </div>
         </div>
