@@ -18,6 +18,11 @@ export default {
         href:
           'https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css',
       },
+      {
+        rel: 'stylesheet',
+        href:
+          '//cdn.materialdesignicons.com/5.4.55/css/materialdesignicons.min.css',
+      },
     ],
   },
 
