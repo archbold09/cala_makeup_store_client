@@ -5,17 +5,24 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'Cala Makeup Store', name: 'Cala Makeup Store', content: 'Tienda virtual de maquillaje y cuidado para la piel.' }
+      {
+        hid: 'Cala Makeup Store',
+        name: 'Cala Makeup Store',
+        content: 'Tienda virtual de maquillaje y cuidado para la piel.',
+      },
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
-    ]
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      {
+        rel: 'stylesheet',
+        href:
+          'https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css',
+      },
+    ],
   },
 
   // Global CSS (https://go.nuxtjs.dev/config-css)
-  css: [
-    '@/assets/css/main.css',
-  ],
+  css: ['@/assets/css/main.css'],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
   components: true,

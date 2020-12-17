@@ -55,3 +55,21 @@ worksans {
     color: #000;
     /*Set to match the Tailwind colour you want the active one to be */
 }
+
+.footer-app{
+    visibility: hidden;
+}
+
+.footer-web{
+    visibility: visible;
+}
+
+@media screen and (max-width: 768px) {
+    .footer-app{
+        visibility: visible;
+    }
+    
+    .footer-web{
+        visibility: hidden;
+    }
+  }
