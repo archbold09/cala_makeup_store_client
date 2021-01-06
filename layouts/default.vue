@@ -4,7 +4,9 @@
   >
     <Sidebar />
     <Header />
-    <Nuxt />
+    <v-main>
+      <Nuxt />
+    </v-main>
     <Footer />
   </v-app>
 </template>

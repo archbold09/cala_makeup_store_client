@@ -1,57 +1,38 @@
 <template>
-  <div>
+  <v-footer dark padless>
+    <v-card flat tile class="indigo white--text text-center">
+      <v-card-text>
+        <v-btn v-for="icon in icons" :key="icon" class="mx-4 white--text" icon>
+          <v-icon size="24px">
+            {{ icon }}
+          </v-icon>
+        </v-btn>
+      </v-card-text>
 
+      <v-card-text class="white--text pt-0">
+        Phasellus feugiat arcu sapien, et iaculis ipsum elementum sit amet.
+        Mauris cursus commodo interdum. Praesent ut risus eget metus luctus
+        accumsan id ultrices nunc. Sed at orci sed massa consectetur dignissim a
+        sit amet dui. Duis commodo vitae velit et faucibus. Morbi vehicula
+        lacinia malesuada. Nulla placerat augue vel ipsum ultrices, cursus
+        iaculis dui sollicitudin. Vestibulum eu ipsum vel diam elementum tempor
+        vel ut orci. Orci varius natoque penatibus et magnis dis parturient
+        montes, nascetur ridiculus mus.
+      </v-card-text>
 
-    <!--footer web-->
-    <div class="mt-34 footer-web">
-      <footer
-        class="mx-auto bg-white py-1 border-t border-gray-400 fixed inset-x-0 bottom-0"
-      >
-        <div class="flex px-3 text-center">
-          <div class="w-full mx-auto flex flex-wrap">
-            <div class="flex w-full justify-between">
-              <div class="flex w-full justify-start items-center">
-                <h3 class="font-black text-gray-900 text-xs uppercase">
-                  <i
-                    class="mdi mdi-copyright"
-                    style="font-size: 15px; font-weight: 900"
-                  ></i>
-                  {{ getDate }}
-                  Cala Makeup Store
-                </h3>
-              </div>
-              <div class="w-full mx-auto flex flex-wrap">
-                <div class="flex w-full justify-end items-center">
-                  <a class="px-2 transform transition duration-700 hover:scale-125" href="#">
-                    <i
-                      class="mdi mdi-facebook text-gray-900"
-                      style="font-size: 20px; font-weight: 900"
-                    ></i>
-                  </a>
-                  <a class="px-2 transform transition duration-700 hover:scale-125" href="#">
-                    <i
-                      class="mdi mdi-instagram text-gray-900"
-                      style="font-size: 20px; font-weight: 900"
-                    ></i>
-                  </a>
-                  <a class="px-2 transform transition duration-700 hover:scale-125" href="#">
-                    <i
-                      class="mdi mdi-whatsapp text-gray-900"
-                      style="font-size: 20px; font-weight: 900"
-                    ></i>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </footer>
-    </div>
-  </div>
+      <v-divider></v-divider>
+
+      <v-card-text class="white--text">
+        {{ getDate }} — <strong>Cala Makeup Store</strong>
+      </v-card-text>
+    </v-card>
+  </v-footer>
 </template>
-
 <script>
 export default {
+  data: () => ({
+    icons: ['mdi-facebook', 'mdi-twitter', 'mdi-linkedin', 'mdi-instagram'],
+  }),
   computed: {
     getDate() {
       return new Date().getFullYear()
@@ -59,23 +40,3 @@ export default {
   },
 }
 </script>
-
-<style lang="css" scoped>
-.footer-app {
-  visibility: hidden;
-}
-
-.footer-web {
-  visibility: visible;
-}
-
-@media screen and (max-width: 768px) {
-  .footer-app {
-    visibility: visible;
-  }
-
-  .footer-web {
-    visibility: hidden;
-  }
-}
-</style>

@@ -12,10 +12,11 @@
     "@nuxtjs/axios": "^5.12.2",
     "core-js": "^3.6.5",
     "nuxt": "^2.14.6",
+    "rm": "^0.1.8",
     "vuex": "^3.6.0"
   },
   "devDependencies": {
-    "@nuxtjs/tailwindcss": "^3.1.0",
+    "@nuxtjs/tailwindcss": "^3.4.2",
     "@nuxtjs/vuetify": "^1.11.2",
     "eslint-config-prettier": "^6.12.0",
     "eslint-plugin-prettier": "^3.1.4",

@@ -1,12 +1,12 @@
 export const state = () => ({
   sidebar: {
-    baseSidebar: true,
+    baseSidebar: false,
   },
 })
 
 export const mutations = {
-  changeStateSidebar(state) {
-    state.sidebar.baseSidebar = !state.sidebar.baseSidebar
+  changeStateSidebar(state, payload) {
+    state.sidebar.baseSidebar = payload
   }
 }
 

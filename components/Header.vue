@@ -3,10 +3,13 @@
     <v-app-bar
       dense
       dark
+      app
     >
-      <v-app-bar-nav-icon @click.stop="changeStateSidebar"></v-app-bar-nav-icon>
+    <v-btn icon @click.stop="changeStateSidebar">
+      <v-app-bar-nav-icon></v-app-bar-nav-icon>
+    </v-btn>
 
-      <v-toolbar-title> {{sidebar}} </v-toolbar-title>
+      <v-toolbar-title> asdasd </v-toolbar-title>
 
       <v-spacer></v-spacer>
 
