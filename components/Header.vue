@@ -13,9 +13,9 @@
 
       <v-spacer></v-spacer>
       <span>
-        <v-icon left>mdi-phone</v-icon>
-        Llamanos:
-        <v-chip outlined link>+57 3205625795</v-chip>
+        <v-chip outlined link>
+          <v-icon left>mdi-phone</v-icon> +57 3205625795</v-chip
+        >
       </span>
     </v-app-bar>
     <v-app-bar dark>
@@ -32,8 +32,14 @@
       <v-btn icon>
         <v-icon>mdi-magnify</v-icon>
       </v-btn>
+
       <template v-slot:extension>
-        <v-tabs align-with-title>
+        <v-tabs
+          dark
+          next-icon="mdi-arrow-right"
+          prev-icon="mdi-arrow-left"
+          show-arrows
+        >
           <v-tab>INICIO</v-tab>
           <v-tab>PRODUCTOS</v-tab>
           <v-tab>NOSOTROS</v-tab>
