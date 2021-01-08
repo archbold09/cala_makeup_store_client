@@ -186,6 +186,29 @@
         </v-col>
       </v-row>
     </v-container>
+
+    <v-parallax dark height="250" src="illustration.jpg">
+      <v-row align="center" justify="center">
+        <v-col class="text-center" cols="12">
+          <h1 class="display-1 font-weight-black mb-4">
+            Suscribete a nuestro Newsletter
+          </h1>
+
+          <v-row justify="center" align="center">
+            <v-col cols="6">
+              <v-text-field
+                filled
+                rounded
+                dense
+              ></v-text-field>
+            </v-col>
+            <v-col cols="6">
+              <v-btn color="primary">Suscribirme</v-btn>
+            </v-col>
+          </v-row>
+        </v-col>
+      </v-row>
+    </v-parallax>
   </div>
 </template>
 
