@@ -1,6 +1,6 @@
 export const state = () => ({
   sidebar: {
-    baseSidebar: true,
+    baseSidebar: false,
   },
 })
 

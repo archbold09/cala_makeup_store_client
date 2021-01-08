@@ -1,7 +1,7 @@
 <template>
   <div>
     <v-container>
-      <v-row>
+      <v-row justify="center">
         <v-col cols="12">
           <v-hover v-slot="{ hover }">
             <v-carousel
@@ -45,6 +45,7 @@
             </v-carousel>
           </v-hover>
         </v-col>
+
         <v-col sm="12" md="6" lg="4" xl="5">
           <v-card dark elevation="2" class="rounded-xl">
             <div class="d-flex flex-no-wrap justify-space-between">
@@ -69,6 +70,7 @@
             </div>
           </v-card>
         </v-col>
+
         <v-col sm="12" md="6" lg="8" xl="7">
           <v-card elevation="2" class="rounded-xl">
             <v-card dark>
@@ -99,34 +101,26 @@
             </v-card>
           </v-card>
         </v-col>
-      </v-row>
 
-      <v-row class="my-6">
         <v-col sm="12" md="3" lg="3" xl="3" v-for="n in 4" :key="n">
-          <div class="d-flex justify-center align-center">
-            <div>
-              <v-avatar dark size="90">
-                <v-icon size="90">mdi-package</v-icon>
-              </v-avatar>
-            </div>
-            <div>
-              <h3>Title</h3>
-              <p>Lorem ipsum dolor sit amet</p>
-            </div>
+          <div class="text-center">
+            <v-avatar dark size="90">
+              <v-icon size="90">mdi-package</v-icon>
+            </v-avatar>
+            <h3>Title</h3>
+            <p>Lorem ipsum dolor sit amet</p>
           </div>
         </v-col>
-      </v-row>
 
-      <v-divider></v-divider>
+        <v-divider></v-divider>
 
-      <v-row class="mt-4">
         <v-col cols="12" class="text-center">
           <h1 class="font-weight-light diplay-3">Categorías Populares</h1>
         </v-col>
 
         <v-col cols="12">
           <v-slide-group multiple show-arrows>
-            <v-slide-item v-for="n in 4" :key="n">
+            <v-slide-item v-for="n in 10" :key="n">
               <div class="text-center mx-2">
                 <v-img max-width="200" src="/illustration.jpg"></v-img>
                 <p>Categoría</p>
@@ -134,34 +128,60 @@
             </v-slide-item>
           </v-slide-group>
         </v-col>
-      </v-row>
 
-      <v-row class="mt-4">
-        <v-col sm="12" md="4" lg="4" xl="3" v-for="n in 4" :key="n">
-          <v-card>
-            <v-img
-              class="white--text align-end"
-              height="200px"
-              src="https://cdn.vuetifyjs.com/images/cards/docks.jpg"
-            >
-              <v-card-title>Top 10 Australian beaches</v-card-title>
-            </v-img>
+        <v-col cols="12" class="text-start">
+          <v-sheet color="red lighten-5" class="rounded-lg py-8" elevation="3">
+            <v-col cols="12">
+              <p
+                class="font-weight-black pl-6 text-sm-subtitle-1 text-md-subtitle-2 text-lg-h6 text-xl-h4"
+              >
+                Productos populares
+              </p>
 
-            <v-card-subtitle class="pb-0"> Number 10 </v-card-subtitle>
-
-            <v-card-text class="text--primary">
-              <div>Whitehaven Beach</div>
-
-              <div>Whitsunday Island, Whitsunday Islands</div>
-            </v-card-text>
-
-            <v-card-actions>
-              <v-btn color="orange" text> Share </v-btn>
-
-              <v-btn color="orange" text> Explore </v-btn>
-            </v-card-actions>
-          </v-card>
+              <v-slide-group multiple show-arrows>
+                <v-slide-item v-for="n in 10" :key="n">
+                  <div class="text-center mx-2">
+                    <v-img max-width="200" src="/illustration.jpg"></v-img>
+                    <p>Categoría</p>
+                  </div>
+                </v-slide-item>
+              </v-slide-group>
+            </v-col>
+          </v-sheet>
         </v-col>
+
+        <v-col cols="12" class="text-start">
+          <v-parallax height="250" dark src="/img2.jpg" elavation="4">
+            <v-row align="center" justify="center">
+              <v-col class="text-center" cols="12">
+                <h1 class="display-1 font-weight-normal mb-4">
+                  Nuestras ofertas
+                </h1>
+                <v-btn rounded text dark class="font-weight-black">
+                  Ver más
+                  <v-icon>mdi-chevron-right</v-icon>
+                </v-btn>
+              </v-col>
+            </v-row>
+          </v-parallax>
+        </v-col>
+
+        <v-col cols="12" class="text-center">
+          <h1 class="font-weight-light diplay-3">Productos nuevos</h1>
+        </v-col>
+
+        <v-col class="text-center" cols="12">
+          <v-slide-group multiple show-arrows>
+            <v-slide-item v-for="n in 10" :key="n">
+              <div class="text-center mx-2">
+                <v-img max-width="200" src="/illustration.jpg"></v-img>
+                <p>Categoría</p>
+              </div>
+            </v-slide-item>
+          </v-slide-group>
+          <v-btn rounded color="primary" link >Ver todos los productos <v-icon right>mdi-chevron-right</v-icon></v-btn>
+        </v-col>
+
       </v-row>
     </v-container>
   </div>
