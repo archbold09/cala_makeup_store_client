@@ -170,7 +170,7 @@
           <h1 class="font-weight-light diplay-3">Productos nuevos</h1>
         </v-col>
 
-        <v-col class="text-center" cols="12">
+        <v-col class="text-center my-8" cols="12">
           <v-slide-group multiple show-arrows>
             <v-slide-item v-for="n in 10" :key="n">
               <div class="text-center mx-2">
@@ -179,9 +179,11 @@
               </div>
             </v-slide-item>
           </v-slide-group>
-          <v-btn rounded color="primary" link >Ver todos los productos <v-icon right>mdi-chevron-right</v-icon></v-btn>
+          <v-btn rounded color="primary" outlined
+            >Ver todos los productos
+            <v-icon right>mdi-chevron-right</v-icon></v-btn
+          >
         </v-col>
-
       </v-row>
     </v-container>
   </div>
