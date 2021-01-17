@@ -12,16 +12,20 @@
       </v-btn>
 
       <v-spacer></v-spacer>
+
       <span>
         <v-chip outlined link>
-          <v-icon left>mdi-phone</v-icon> +57 3205625795</v-chip
-        >
+          <v-icon left>mdi-phone</v-icon> +57 3205625795
+        </v-chip>
       </span>
     </v-app-bar>
     <v-app-bar dark>
-      <v-btn icon @click.stop="changeStateSidebar">
-        <v-app-bar-nav-icon></v-app-bar-nav-icon>
-      </v-btn>
+      
+      <no-ssr>
+        <v-btn icon @click.stop="changeStateSidebar">
+          <v-app-bar-nav-icon></v-app-bar-nav-icon>
+        </v-btn>
+      </no-ssr>
 
       <v-toolbar-title class="font-weight-black">
         CALA <span class="font-weight-light">MAKEUP STORE</span>

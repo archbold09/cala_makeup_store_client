@@ -26,7 +26,7 @@
           <v-list-item-title>Productos</v-list-item-title>
         </template>
 
-        <v-list-group :value="true" no-action sub-group >
+        <v-list-group :value="true" no-action sub-group>
           <template v-slot:activator>
             <v-list-item-content>
               <v-list-item-title>Piel</v-list-item-title>
