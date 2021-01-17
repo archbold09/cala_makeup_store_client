@@ -20,12 +20,9 @@
       </span>
     </v-app-bar>
     <v-app-bar dark>
-      
-      <no-ssr>
-        <v-btn icon @click.stop="changeStateSidebar">
-          <v-app-bar-nav-icon></v-app-bar-nav-icon>
-        </v-btn>
-      </no-ssr>
+      <v-btn icon @click.stop="changeStateSidebar">
+        <v-icon>mdi-menu</v-icon>
+      </v-btn>
 
       <v-toolbar-title class="font-weight-black">
         CALA <span class="font-weight-light">MAKEUP STORE</span>
@@ -56,6 +53,7 @@
 <script>
 import { mapMutations } from 'vuex'
 export default {
+  asyncData(params) {},
   methods: {
     ...mapMutations(['changeStateSidebar']),
   },
