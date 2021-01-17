@@ -172,11 +172,19 @@
 
         <v-col class="text-center my-8" cols="12">
           <v-slide-group multiple show-arrows>
-            <v-slide-item v-for="n in 10" :key="n">
-              <div class="text-center mx-2">
-                <v-img max-width="200" src="/illustration.jpg"></v-img>
-                <p>Categoría</p>
-              </div>
+            <v-slide-item v-for="(item, index) in 10" :key="index">
+              <nuxt-link
+                :to="{
+                  name: 'product-id',
+                  path: '/product/:id',
+                  params: { id: index },
+                }"
+              >
+                <div class="text-center mx-2">
+                  <v-img max-width="200" src="/illustration.jpg"></v-img>
+                  <p>Categoría</p>
+                </div>
+              </nuxt-link>
             </v-slide-item>
           </v-slide-group>
           <v-btn rounded color="primary" outlined
@@ -194,15 +202,17 @@
             Suscribete a nuestro Newsletter
           </h1>
 
-          <v-row justify="center" align="center">
-            <v-col cols="6">
+          <v-row justify="center" align-content="center">
+            <v-col cols="12" sm="12" md="2" lg="2" xl="2">
               <v-text-field
                 filled
                 rounded
                 dense
+                background-color="white"
+                placeholder="Email@example.com"
               ></v-text-field>
             </v-col>
-            <v-col cols="6">
+            <v-col cols="12" sm="12" md="2" lg="2" xl="2">
               <v-btn color="primary">Suscribirme</v-btn>
             </v-col>
           </v-row>

@@ -53,7 +53,6 @@
 <script>
 import { mapMutations } from 'vuex'
 export default {
-  asyncData(params) {},
   methods: {
     ...mapMutations(['changeStateSidebar']),
   },
