@@ -6,7 +6,7 @@
       </v-list-item-avatar>
 
       <v-list-item-content>
-        <v-list-item-title> Cala Makeup Store </v-list-item-title>
+        <v-list-item-title> CALA MAKEUP STORE </v-list-item-title>
       </v-list-item-content>
     </v-list-item>
 
@@ -91,7 +91,8 @@ export default {
   computed: {
     ...mapGetters({
       sidebar:'sidebar',
-      getCategories: 'categories/getCategories'
+      getCategories: 'categories/getCategories',
+      getSubCategories: 'subCategories/getSubCategories',
     }),
   },
 }
