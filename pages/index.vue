@@ -166,32 +166,7 @@
           </v-parallax>
         </v-col>
 
-        <v-col cols="12" class="text-center">
-          <h1 class="font-weight-light diplay-3">Productos nuevos</h1>
-        </v-col>
-
-        <v-col class="text-center my-8" cols="12">
-          <v-slide-group multiple show-arrows>
-            <v-slide-item v-for="(item, index) in 10" :key="index">
-              <nuxt-link
-                :to="{
-                  name: 'product-id',
-                  path: '/product/:id',
-                  params: { id: index },
-                }"
-              >
-                <div class="text-center mx-2">
-                  <v-img max-width="200" src="/illustration.jpg"></v-img>
-                  <p>Categoría</p>
-                </div>
-              </nuxt-link>
-            </v-slide-item>
-          </v-slide-group>
-          <v-btn rounded color="primary" outlined
-            >Ver todos los productos
-            <v-icon right>mdi-chevron-right</v-icon></v-btn
-          >
-        </v-col>
+        <NewProducts :newProducts="newProducts" />
       </v-row>
     </v-container>
 
@@ -225,7 +200,8 @@
 <script>
 export default {
   async asyncData({ $axios }) {
-    const response = await $axios.$get('/categories')
+    const newProducts = await $axios.$get('/products/newProducts')
+    return {newProducts}
   },
   data() {
     return {
@@ -241,33 +217,10 @@ export default {
           src: '/img1.jpg',
         },
       ],
-      products: [
-        {
-          img:
-            'https://images.unsplash.com/photo-1555982105-d25af4182e4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&h=400&q=80',
-        },
-        {
-          img:
-            'https://images.unsplash.com/photo-1508423134147-addf71308178?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&h=400&q=80',
-        },
-        {
-          img:
-            'https://images.unsplash.com/photo-1449247709967-d4461a6a6103?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&h=400&q=80',
-        },
-        {
-          img:
-            'https://images.unsplash.com/reserve/LJIZlzHgQ7WPSh5KVTCB_Typewriter.jpg?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&h=400&q=80',
-        },
-        {
-          img:
-            'https://images.unsplash.com/photo-1467949576168-6ce8e2df4e13?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&h=400&q=80',
-        },
-        {
-          img:
-            'https://images.unsplash.com/photo-1544787219-7f47ccb76574?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&h=400&q=80',
-        },
-      ],
     }
+  },
+  computed: {
+    getNewProducts() {},
   },
 }
 </script>

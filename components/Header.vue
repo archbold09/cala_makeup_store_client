@@ -41,9 +41,13 @@
           prev-icon="mdi-arrow-left"
           show-arrows
         >
-          <v-tab>INICIO</v-tab>
-          <v-tab>PRODUCTOS</v-tab>
-          <v-tab>NOSOTROS</v-tab>
+          <v-tab
+            v-for="(item, i) in tabContent"
+            :key="i"
+            nuxt
+            :to="item.route"
+            >{{ item.name }}</v-tab
+          >
         </v-tabs>
       </template>
     </v-app-bar>
@@ -53,6 +57,15 @@
 <script>
 import { mapMutations } from 'vuex'
 export default {
+  data() {
+    return {
+      tabContent: [
+        { name: 'INICIO', route: '/' },
+        { name: 'PRODUCTOS', route: '/products' },
+        { name: 'NOSOTROS', route: '/about' },
+      ],
+    }
+  },
   methods: {
     ...mapMutations(['changeStateSidebar']),
   },

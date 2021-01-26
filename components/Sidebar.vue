@@ -26,39 +26,27 @@
           <v-list-item-title>Productos</v-list-item-title>
         </template>
 
-        <v-list-group :value="true" no-action sub-group v-for="(item,i) in getCategories.data" :key="i">
-          
-
+        <v-list-group
+          :value="true"
+          no-action
+          sub-group
+          v-for="(item, i) in sidebarContent.categories"
+          :key="i"
+        >
           <template v-slot:activator>
             <v-list-item-content>
-              <v-list-item-title>{{item.name}}</v-list-item-title>
+              <v-list-item-title>{{ item.name }}</v-list-item-title>
             </v-list-item-content>
           </template>
 
-          <v-list-item v-for="([title, icon], i) in admins" :key="i" link>
-            <v-list-item-title v-text="title"></v-list-item-title>
+          <v-list-item v-for="(item2, i2) in item.subCategories" :key="i2" link>
+            <v-list-item-title v-text="item2.name"></v-list-item-title>
 
             <v-list-item-icon>
-              <v-icon v-text="icon"></v-icon>
+              <!-- <v-icon v-text="icon"></v-icon> -->
             </v-list-item-icon>
           </v-list-item>
         </v-list-group>
-
-        <!-- <v-list-group no-action sub-group>
-          <template v-slot:activator>
-            <v-list-item-content>
-              <v-list-item-title>Actions</v-list-item-title>
-            </v-list-item-content>
-          </template>
-
-          <v-list-item v-for="([title, icon], i) in cruds" :key="i" link>
-            <v-list-item-title v-text="title"></v-list-item-title>
-
-            <v-list-item-icon>
-              <v-icon v-text="icon"></v-icon>
-            </v-list-item-icon>
-          </v-list-item>
-        </v-list-group> -->
       </v-list-group>
     </v-list>
   </v-navigation-drawer>
@@ -66,34 +54,85 @@
 
 <script>
 import { mapGetters } from 'vuex'
+
 export default {
-  created(){
-    this.$store.dispatch('categories/getCategories')
-  },
   data() {
     return {
-      items: [
-        { title: 'Home', icon: 'mdi-view-dashboard' },
-        { title: 'About', icon: 'mdi-forum' },
-      ],
-      admins: [
-        ['Cremas', 'mdi-account-multiple-outline'],
-        ['Rubores', 'mdi-cog-outline'],
-      ],
-      cruds: [
-        ['Create', 'mdi-plus-outline'],
-        ['Read', 'mdi-file-outline'],
-        ['Update', 'mdi-update'],
-        ['Delete', 'mdi-delete'],
-      ],
+      sidebarContent: {
+        categories: [
+          {
+            name: 'Primers',
+            icon: '',
+            subCategories: [
+              { name: 'Primers' },
+              { name: 'Correctores' },
+              { name: 'Bases' },
+              { name: 'Contornos e iluminadores' },
+              { name: 'Iluminadores' },
+              { name: 'Rubores' },
+              { name: 'Polvos' },
+            ],
+          },
+          {
+            name: 'Correctores',
+            icon: '',
+            subCategories: [
+              { name: 'Pestaniñas' },
+              { name: 'Delineadores' },
+              { name: 'Pestañas postizas' },
+              { name: 'Sombras' },
+              { name: 'Primers' },
+            ],
+          },
+          {
+            name: 'Bases',
+            icon: '',
+            subCategories: [
+              { name: 'Tónicos' },
+              { name: 'Desmaquillantes' },
+              { name: 'Exfoliantes' },
+              { name: 'Mascarillas' },
+              { name: 'Otros' },
+              { name: 'Cremas' },
+            ],
+          },
+          {
+            name: 'Contornos e iluminadores',
+            icon: '',
+            subCategories: [
+              { name: 'Esponjas' },
+              { name: 'Brochas' },
+              { name: 'Cintillos' },
+            ],
+          },
+          {
+            name: 'Iluminadores',
+            icon: '',
+            subCategories: [
+              { name: 'Labiales en barra' },
+              { name: 'Lápices' },
+              { name: 'Labiales liquidos' },
+              { name: 'Brillos y humectantes' },
+              { name: 'Primers' },
+            ],
+          },
+          {
+            name: 'Rubores',
+            icon: '',
+            subCategories: [
+              { name: 'Lápices' },
+              { name: 'Betunes' },
+              { name: 'Kit' },
+            ],
+          },
+        ],
+      },
     }
   },
   computed: {
     ...mapGetters({
-      sidebar:'sidebar',
-      getCategories: 'categories/getCategories',
-      getSubCategories: 'subCategories/getSubCategories',
-    }),
+      sidebar: 'sidebar',
+    })
   },
 }
 </script>
